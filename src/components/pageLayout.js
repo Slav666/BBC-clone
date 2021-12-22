@@ -49,7 +49,7 @@ function Album(props) {
       <CssBaseline />
       <main>
         <div className={classNames(classes.layout, classes.cardGrid)}>
-          <Grid container spacing={40}>
+          <Grid container spacing={20}>
             <Grid item sm={6}>
               <Card>
                 <CardMedia
