@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
@@ -13,12 +13,27 @@ const Header = () => {
   const [showMore, setShowMore] = useState(false);
   const [showSignInForm, setShowSignInForm] = useState(false);
 
+  const useStyles = makeStyles((theme) => ({
+    bbcLogo: {
+      width: "15px",
+      hight: "15px",
+      backgroundColor: "black",
+      color: "white",
+      marginRight: "2px",
+    },
+  }));
+
+  const styles = useStyles();
   return (
     <>
       <div>
         <Grid container spacing={2} justifyContent="center" alignItems="center">
           <Grid item>
-            <Typography>BBC</Typography>
+            <Typography color="primary">
+              <span className={styles.bbcLogo}>B</span>
+              <span className={styles.bbcLogo}>B</span>
+              <span className={styles.bbcLogo}>C</span>
+            </Typography>
           </Grid>
           <Grid item>
             <AccountCircleIcon />
@@ -36,7 +51,6 @@ const Header = () => {
           <Grid item>
             <NotificationIcon />
           </Grid>
-
           <Grid item>
             <Typography variant="body1">
               <Link to="/home">Home</Link>
