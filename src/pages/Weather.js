@@ -1,5 +1,5 @@
 import React from "react";
-import WeatherImage from "../assets/weather.jpeg";
+import WeatherImage from "../assets/sport.jpg";
 const Weather = () => {
   return (
     <div>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../App.css";
-import { Typography, Grid, makeStyles } from "@material-ui/core";
-import { Link } from "react-router-dom";
+import bbcLogo from "../assets/5842ab62a6515b1e0ad75b09.png";
+import { Typography, Grid, makeStyles, Link } from "@material-ui/core";
+import { Link as RouterLink } from "react-router-dom";
 import Search from "./Search";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import NotificationIcon from "@material-ui/icons/NotificationsRounded";
@@ -21,19 +22,24 @@ const Header = () => {
       color: "white",
       marginRight: "2px",
     },
+    link: {
+      "&:hover": {
+        borderBottom: "5px solid red",
+      },
+    },
   }));
 
   const styles = useStyles();
   return (
     <>
       <div>
-        <Grid container spacing={2} justifyContent="center" alignItems="center">
+        <Grid container spacing={4} justifyContent="center" alignItems="center">
           <Grid item>
-            <Typography color="primary">
-              <span className={styles.bbcLogo}>B</span>
-              <span className={styles.bbcLogo}>B</span>
-              <span className={styles.bbcLogo}>C</span>
-            </Typography>
+            <img
+              src={bbcLogo}
+              alt="bbc-logo"
+              style={{ width: "70px", height: "20px" }}
+            />
           </Grid>
           <Grid item>
             <AccountCircleIcon />
@@ -52,34 +58,91 @@ const Header = () => {
             <NotificationIcon />
           </Grid>
           <Grid item>
-            <Typography variant="body1">
-              <Link to="/home">Home</Link>
+            <Typography variant="body1" className={styles.typography}>
+              <Link
+                className={styles.link}
+                to="/home"
+                component={RouterLink}
+                underline="none"
+                color="inherit"
+              >
+                Home
+              </Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1">
-              <Link to="/news">News</Link>
+              <Link
+                to="/news"
+                component={RouterLink}
+                underline="none"
+                color="inherit"
+              >
+                News
+              </Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1">
-              <Link to="/sport">Sport</Link>
+              <Link
+                to="/sport"
+                component={RouterLink}
+                underline="none"
+                color="inherit"
+              >
+                Sport
+              </Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography variant="body1">
-              <Link to="/weather">Weather</Link>
+              <Link
+                to="/weather"
+                component={RouterLink}
+                underline="none"
+                color="inherit"
+              >
+                Weather
+              </Link>
             </Typography>
           </Grid>
           <Grid item>
-            <Typography>IPlayer</Typography>
+            <Typography>
+              <Link
+                to="/"
+                component={RouterLink}
+                underline="none"
+                color="inherit"
+              >
+                IPlayer
+              </Link>
+            </Typography>
           </Grid>
           <Grid item>
-            <Typography>Sounds</Typography>
+            <Typography>
+              <Link
+                to="/"
+                component={RouterLink}
+                underline="none"
+                color="inherit"
+              >
+                Sounds
+              </Link>
+            </Typography>
           </Grid>
           <Grid item>
-            <Typography>CBBC</Typography>
+            <Typography>
+              <Link
+                to="/"
+                component={RouterLink}
+                underline="none"
+                color="inherit"
+              >
+                CBBC
+              </Link>
+            </Typography>
           </Grid>
+
           <Grid item>
             <Typography>More</Typography>
           </Grid>
@@ -90,6 +153,7 @@ const Header = () => {
               }}
             />
           </Grid>
+
           <Grid item>
             <Search />
           </Grid>
