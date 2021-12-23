@@ -12,19 +12,21 @@ const useStyles = makeStyles((theme) =>
     search: {
       position: "relative",
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: "gray",
+      backgroundColor: "#E0E0E0",
       "&:hover": {
         backgroundColor: fade(theme.palette.common.white, 0.25),
       },
       marginLeft: 0,
       width: "100%",
       [theme.breakpoints.up("sm")]: {
-        marginLeft: theme.spacing(1),
-        width: "auto",
+        marginLeft: theme.spacing(8),
+        width: "200px",
+        height: "25px",
       },
     },
     searchIcon: {
-      padding: theme.spacing(0, 14),
+      // padding: theme.spacing(0, 14),
+      paddingLeft: "170px",
       height: "100%",
       position: "absolute",
       pointerEvents: "none",
@@ -36,9 +38,10 @@ const useStyles = makeStyles((theme) =>
       color: "inherit",
     },
     inputInput: {
-      padding: theme.spacing(1, 1, 1, 0),
+      paddingLeft: "2px",
+      // padding: theme.spacing(1, 1, 1, 0),
       // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(2)}px)`,
+      // paddingLeft: `calc(1em + ${theme.spacing(1)}px)`,
       transition: theme.transitions.create("width"),
       width: "100%",
       [theme.breakpoints.up("sm")]: {
