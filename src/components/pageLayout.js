@@ -31,10 +31,11 @@ const styles = (theme) => ({
     display: "flex",
     flexDirection: "column",
     padding: "10px",
+    width: 300,
   },
   cardMedia: {
     paddingTop: "56.25%", // 16:9
-    height: 100,
+    height: 250,
   },
   cardContent: {
     flexGrow: 1,
@@ -93,10 +94,10 @@ function Album(props) {
                 <Card className={classes.card}>
                   <CardActionArea>
                     <CardMedia
-                      style={{ height: "150px" }}
+                      // style={{ height: "150px" }}
                       // component="img"
                       className={classes.cardMedia}
-                      image="../../public/img/weather.jpeg"
+                      image={card.image}
                       title="sport"
                     />
                   </CardActionArea>
