@@ -3,11 +3,7 @@ import { Link as RouterLink } from "react-router-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const BottomNav = () => {
-  const useStyles = makeStyles((theme) => ({
-    // title: {
-    //   marginLeft: "350px",
-    // },
-  }));
+  const useStyles = makeStyles((theme) => ({}));
 
   const styles = useStyles();
 

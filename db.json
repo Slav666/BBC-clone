@@ -2,63 +2,63 @@
   "cards": [
     {
       "id": 1,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 2,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir1",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 3,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir2",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 4,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir3",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 5,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir4",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 6,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir5",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 7,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir6",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 8,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir7",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 9,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir8",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     },
     {
       "id": 10,
-      "image": "./src/assets/sport.jpg",
+      "image": "https://via.placeholder.com/125/0000FF/808080",
       "title": "Slawomir9",
-      "description": "Hello"
+      "description": "This is BBC website content. "
     }
   ]
 }
