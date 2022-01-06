@@ -9,7 +9,7 @@ const BottomNav = () => {
 
   return (
     <div>
-      <Grid container justifyContent="left" className={styles.title}>
+      <Grid container justifyContent="left">
         <Typography variant="h3">News</Typography>
       </Grid>
       <Grid container spacing={2}>

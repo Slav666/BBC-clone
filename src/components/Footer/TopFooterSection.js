@@ -28,7 +28,14 @@ const TopFooterSection = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Grid container style={{ width: "80vw", alignItems: "center" }}>
+      <Grid
+        container
+        style={{
+          width: "80vw",
+          alignItems: "center",
+          paddingLeft: "calc(17% - 20px)",
+        }}
+      >
         <Grid item>
           <Typography variant="h4">BBC News Service</Typography>
         </Grid>
@@ -38,7 +45,7 @@ const TopFooterSection = () => {
         container
         spacing={4}
         justifyContent="center"
-        style={{ maxWidth: "100%" }}
+        style={{ paddingBottom: "15px" }}
       >
         <Grid item xs={6} lg={2}>
           <ListItem button>

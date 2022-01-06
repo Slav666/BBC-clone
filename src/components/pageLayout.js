@@ -133,9 +133,9 @@ function Album(props) {
           </Grid>
         </div>
       </main>
-      <div>
-        <Divider />
-      </div>
+
+      <Divider />
+
       <div className={classNames(classes.layout, classes.cardGrid)}>
         <Grid container>
           {cards1.map((card) => (
