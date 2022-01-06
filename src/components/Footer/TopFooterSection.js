@@ -5,6 +5,7 @@ import {
   ListItem,
   Link,
   ListItemIcon,
+  makeStyles,
 } from "@material-ui/core";
 
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
@@ -12,22 +13,32 @@ import MicIcon from "@mui/icons-material/Mic";
 import MoveToInboxIcon from "@mui/icons-material/MoveToInbox";
 import ContactMailIcon from "@mui/icons-material/ContactMail";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex",
+    flexDirection: "column",
+    // alignItems: "left",
+
+    color: "white;",
+    backgroundColor: "#2f2f2f",
+  },
+}));
+
 const TopFooterSection = () => {
+  const classes = useStyles();
   return (
-    <div style={{ color: "white" }}>
-      <Grid
-        container
-        justifyContent="center"
-        style={{ maxWidth: "100%", backgroundColor: "#2f2f2f" }}
-      >
-        <Typography variant="h4">BBC News Service</Typography>
+    <div className={classes.root}>
+      <Grid container style={{ width: "80vw", alignItems: "center" }}>
+        <Grid item>
+          <Typography variant="h4">BBC News Service</Typography>
+        </Grid>
       </Grid>
 
       <Grid
         container
         spacing={4}
         justifyContent="center"
-        style={{ backgroundColor: "#2f2f2f" }}
+        style={{ maxWidth: "100%" }}
       >
         <Grid item xs={6} lg={2}>
           <ListItem button>
