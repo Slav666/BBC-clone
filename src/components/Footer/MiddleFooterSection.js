@@ -9,18 +9,32 @@ import Image1 from "../../assets/image1.jpg";
 import Image2 from "../../assets/Image2.jpg";
 import Image3 from "../../assets/image3.jpg";
 import Image4 from "../../assets/image4.jpg";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    maxWidth: "100%",
+    color: "white",
+  },
+  divider: {
+    background: "lightgrey",
+    // paddingTop: "20px",
+  },
+}));
 
 const MiddleFooterSection = () => {
+  const classes = useStyles();
   return (
-    <div>
+    <div className={classes.root}>
       <Grid
         container
         justifyContent="center"
-        spacing={1}
+        spacing={2}
         style={{
           backgroundColor: "#ff8c00",
           paddingTop: "20px",
           paddingBottom: "20px",
+          maxWidth: "100%",
         }}
       >
         <Grid item>

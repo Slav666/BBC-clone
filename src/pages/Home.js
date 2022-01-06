@@ -3,7 +3,7 @@ import Album from "../components/pageLayout";
 
 const Home = () => {
   return (
-    <div style={{ backgroundColor: "pink" }}>
+    <div>
       <Album />
     </div>
   );

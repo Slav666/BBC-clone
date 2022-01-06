@@ -28,17 +28,17 @@ export default function MiddleDividers() {
         <Grid item direction="column" xs={1}>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">Home</Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">CBBC</Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">Local</Link>
             </Typography>
           </Grid>
         </Grid>
@@ -49,32 +49,17 @@ export default function MiddleDividers() {
         <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">News</Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">CBeebies</Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid item>
-          <Divider orientation="vertical" className={classes.divider} />
-        </Grid>
-        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
-          <Grid item>
-            <Typography>
-              <Link color="inherit">Test</Link>
-            </Typography>
-          </Grid>
-          <Grid item>
-            <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">Three</Link>
             </Typography>
           </Grid>
         </Grid>
@@ -84,12 +69,12 @@ export default function MiddleDividers() {
         <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">Sport</Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">Food</Link>
             </Typography>
           </Grid>
         </Grid>
@@ -99,12 +84,27 @@ export default function MiddleDividers() {
         <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">Weather</Link>
             </Typography>
           </Grid>
           <Grid item>
             <Typography>
-              <Link color="inherit">Test</Link>
+              <Link color="inherit">Bitesize</Link>
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Divider orientation="vertical" className={classes.divider} />
+        </Grid>
+        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
+          <Grid item>
+            <Typography>
+              <Link color="inherit">iPlayer</Link>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography>
+              <Link color="inherit">Arts</Link>
             </Typography>
           </Grid>
         </Grid>
