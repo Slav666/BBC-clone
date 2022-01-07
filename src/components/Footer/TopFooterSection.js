@@ -17,7 +17,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
-    // alignItems: "left",
 
     color: "white;",
     backgroundColor: "#2f2f2f",
