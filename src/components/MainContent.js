@@ -1,10 +1,10 @@
 import React from "react";
 import "../App.css";
 import { Route, Switch } from "react-router-dom";
-import News from "../pages/News";
-import Sport from "../pages/Sport";
-import Home from "../pages/Home";
-import Weather from "../pages/Weather";
+import Climate from "../mainNavPages/climate";
+import Coronavirus from "../mainNavPages/coronavirus";
+import Home from "../mainNavPages/home";
+import Uk from "../mainNavPages/uk";
 
 const MainContent = () => {
   return (
@@ -13,14 +13,14 @@ const MainContent = () => {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/news">
-          <News />
+        <Route path="/coronavirus">
+          <Climate />
         </Route>
-        <Route path="/sport">
-          <Sport />
+        <Route path="/climate">
+          <Coronavirus />
         </Route>
-        <Route path="/weather">
-          <Weather />
+        <Route path="/uk">
+          <Uk />
         </Route>
       </Switch>
     </div>

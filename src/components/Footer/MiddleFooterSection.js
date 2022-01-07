@@ -69,10 +69,12 @@ const MiddleFooterSection = () => {
               />
             </CardActionArea>
             <CardContent style={{ backgroundColor: "#2f2f2f" }}>
-              <Typography style={{ display: "flex", flexWrap: "wrap" }}>
+              <Typography
+                style={{ display: "flex", flexWrap: "wrap", color: "white" }}
+              >
                 You should walking in the morning!
               </Typography>
-              <Typography>BBC SOUNDS</Typography>
+              <Typography style={{ color: "white" }}>BBC SOUNDS</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -86,8 +88,8 @@ const MiddleFooterSection = () => {
               />
             </CardActionArea>
             <CardContent style={{ backgroundColor: "#2f2f2f" }}>
-              <Typography>bolek</Typography>
-              <Typography>BBC SOUNDS</Typography>
+              <Typography style={{ color: "white" }}>bolek</Typography>
+              <Typography style={{ color: "white" }}>BBC SOUNDS</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -101,8 +103,10 @@ const MiddleFooterSection = () => {
               />
             </CardActionArea>
             <CardContent style={{ backgroundColor: "#2f2f2f" }}>
-              <Typography>The murky world of football transfer</Typography>
-              <Typography>BBC SOUNDS</Typography>
+              <Typography style={{ color: "white" }}>
+                The murky world of football transfer
+              </Typography>
+              <Typography style={{ color: "white" }}>BBC SOUNDS</Typography>
             </CardContent>
           </Card>
         </Grid>

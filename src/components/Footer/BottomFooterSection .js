@@ -24,7 +24,7 @@ export default function MiddleDividers() {
 
   return (
     <div className={classes.root}>
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" style={{ width: "80vw" }}>
         <Grid item direction="column" xs={1}>
           <Grid item>
             <Typography>
@@ -94,7 +94,11 @@ export default function MiddleDividers() {
           </Grid>
         </Grid>
         <Grid item>
-          <Divider orientation="vertical" className={classes.divider} />
+          <Divider
+            orientation="vertical"
+            className={classes.divider}
+            variant="middle"
+          />
         </Grid>
         <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
           <Grid item>
@@ -108,18 +112,43 @@ export default function MiddleDividers() {
             </Typography>
           </Grid>
         </Grid>
+        <Grid item>
+          <Divider
+            orientation="vertical"
+            className={classes.divider}
+            variant="middle"
+          />
+        </Grid>
+        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
+          <Grid item>
+            <Typography>
+              <Link color="inherit">Sounds</Link>
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography>
+              <Link color="inherit">Taster</Link>
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
-      <Paper>
+      <div
+        style={{
+          paddingTop: "10px",
+          // width: "80vw",
+        }}
+      >
         <Divider className={classes.divider} />
-      </Paper>
+      </div>
       <Grid
         container
         justifyContent="center"
         style={{
           backgroundColor: "#4c4c4c",
           padding: "10px",
+          // width: "80vw",
         }}
-        // spacing={3}
+        // spacing={}
       >
         <Grid item>
           <Typography variant="small">
