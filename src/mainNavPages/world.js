@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Album from "../components/pageLayout";
 
-const Coronavirus = () => {
-  const [cards4, setCards] = useState([]);
-  const [cards5, setCards1] = useState([]);
+const World = () => {
+  const [card12, setCards] = useState([]);
+  const [cards13, setCards1] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
@@ -32,11 +32,12 @@ const Coronavirus = () => {
     const data = await res.json();
     return data;
   };
+
   return (
     <div>
-      <Album cards={cards4} cards1={cards5} />
+      <Album cards={card12} cards1={cards13} />
     </div>
   );
 };
 
-export default Coronavirus;
+export default World;

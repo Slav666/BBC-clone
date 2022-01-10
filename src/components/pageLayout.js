@@ -13,8 +13,9 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import Image1 from "../assets/image1.jpg";
 import Divider from "@material-ui/core/Divider";
+import { makeStyles } from "@material-ui/core";
 
-const styles = (theme) => ({
+const useStyles = makeStyles((theme) => ({
   layout: {
     width: "auto",
     marginLeft: theme.spacing.unit * 2,
@@ -42,43 +43,12 @@ const styles = (theme) => ({
   cardContent: {
     flexGrow: 1,
   },
-});
+}));
 
 // const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 //sm={6} md={3} lg={2} => line 92
-function Album(props) {
-  const { classes } = props;
-
-  const [cards, setCards] = useState([]);
-  const [cards1, setCards1] = useState([]);
-
-  useEffect(() => {
-    const getCards = async () => {
-      const cardsFromServer = await fetchCards();
-      setCards(cardsFromServer);
-    };
-    getCards();
-  }, []);
-
-  useEffect(() => {
-    const getCards = async () => {
-      const cardsFromServer = await fetchCards1();
-      setCards1(cardsFromServer);
-    };
-    getCards();
-  }, []);
-
-  const fetchCards = async () => {
-    const res = await fetch("http://localhost:5000/cards");
-    const data = await res.json();
-    return data;
-  };
-
-  const fetchCards1 = async () => {
-    const res = await fetch("http://localhost:5000/cards1");
-    const data = await res.json();
-    return data;
-  };
+const Album = ({ cards, cards1 }) => {
+  const classes = useStyles();
 
   return (
     <React.Fragment>
@@ -166,10 +136,11 @@ function Album(props) {
       </div>
     </React.Fragment>
   );
-}
-
-Album.propTypes = {
-  classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Album);
+// Album.propTypes = {
+//   classes: PropTypes.object.isRequired,
+// };
+
+// export default withStyles(styles)(Album);
+export default Album;

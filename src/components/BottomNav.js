@@ -64,7 +64,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/uk"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -76,7 +76,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/world"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -88,7 +88,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/business"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -100,7 +100,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/politics"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -112,7 +112,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/tech"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -124,7 +124,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/science"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -136,7 +136,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/health"
               component={RouterLink}
               underline="none"
               color="inherit"
