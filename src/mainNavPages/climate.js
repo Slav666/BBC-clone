@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Album from "../components/pageLayout";
+import { useSelector, useDispatch } from "react-redux";
 
 const Climate = () => {
+  // const dispatch = useDispatch();
+  // const cards = useSelector((state) => state.cards);
+
   const [cards, setCards] = useState([]);
   const [cards1, setCards1] = useState([]);
 

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "../App.css";
+import { useSelector, useDispatch } from "react-redux";
+import { extraMenuActions } from "../store/index";
+import { signInFormActions } from "../store/index";
 import bbcLogo from "../assets/5842ab62a6515b1e0ad75b09.png";
 import { Typography, Grid, makeStyles, Link } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
@@ -11,8 +14,17 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import FormDialog from "./SignInForm";
 
 const Header = () => {
-  const [showMore, setShowMore] = useState(false);
-  const [showSignInForm, setShowSignInForm] = useState(false);
+  const dispatch = useDispatch();
+  const showExtraMenu = useSelector((state) => state.extraMenu.isOpened);
+  const toggleMenuHandler = () => {
+    dispatch(extraMenuActions.open());
+  };
+  const showSignInForm = useSelector((state) => state.signInForm.isOpened);
+  const toggleFormHandler = () => {
+    dispatch(signInFormActions.open());
+  };
+  // const [showMore, setShowMore] = useState(false);
+  // const [showSignInForm, setShowSignInForm] = useState(false);
 
   const useStyles = makeStyles((theme) => ({
     bbcLogo: {
@@ -45,13 +57,7 @@ const Header = () => {
             <AccountCircleIcon />
           </Grid>
           <Grid item>
-            <Typography
-              onClick={() => {
-                setShowSignInForm(!showSignInForm);
-              }}
-            >
-              Sign in
-            </Typography>
+            <Typography onClick={toggleFormHandler}>Sign in</Typography>
             {showSignInForm && <FormDialog />}
           </Grid>
           <Grid item>
@@ -147,18 +153,14 @@ const Header = () => {
             <Typography>More</Typography>
           </Grid>
           <Grid item>
-            <ArrowDropDownIcon
-              onClick={() => {
-                setShowMore(!showMore);
-              }}
-            />
+            <ArrowDropDownIcon onClick={toggleMenuHandler} />
           </Grid>
 
           <Grid item>
             <Search />
           </Grid>
         </Grid>
-        {showMore && (
+        {showExtraMenu && (
           <Grid
             container
             spacing={2}

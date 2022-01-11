@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Climate from "../mainNavPages/climate";
 import Coronavirus from "../mainNavPages/coronavirus";
 import Home from "../mainNavPages/home";
@@ -26,38 +26,49 @@ const MainContent = ({
 }) => {
   return (
     <div className="main-content">
-      <Switch>
-        <Route path="/home">
-          <Home cards={cards2} cards1={cards3} />
-        </Route>
-        <Route path="/climate">
-          <Climate cards={cards} cards1={cards1} />
-        </Route>
-        <Route path="/coronavirus">
-          <Coronavirus cards={cards4} cards1={cards5} />
-        </Route>
-        <Route path="/uk">
-          <Uk cards={cards7} cards1={cards8} />
-        </Route>
-        <Route path="/world">
-          <World cards={cards12} cards1={cards13} />
-        </Route>
-        <Route path="/business">
-          <Business cards={cards} cards1={cards1} />
-        </Route>
-        <Route path="/politics">
-          <Politics cards={cards} cards1={cards1} />
-        </Route>
-        <Route path="/tech">
-          <Tech cards={cards} cards1={cards1} />
-        </Route>
-        <Route path="/science">
-          <Science cards={cards} cards1={cards1} />
-        </Route>
-        <Route path="/health">
-          <Health cards={cards} cards1={cards1} />
-        </Route>
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />}></Route>
+        <Route
+          path="/home"
+          element={<Home cards={cards2} cards1={cards3} />}
+        ></Route>
+        <Route
+          path="/climate"
+          element={<Climate cards={cards} cards1={cards1} />}
+        ></Route>
+        <Route
+          path="/coronavirus"
+          element={<Coronavirus cards={cards4} cards1={cards5} />}
+        ></Route>
+        <Route
+          path="/uk"
+          element={<Uk cards={cards7} cards1={cards8} />}
+        ></Route>
+        <Route
+          path="/world"
+          element={<World cards={cards12} cards1={cards13} />}
+        ></Route>
+        <Route
+          path="/business"
+          element={<Business cards={cards} cards1={cards1} />}
+        ></Route>
+        <Route
+          path="/politics"
+          element={<Politics cards={cards} cards1={cards1} />}
+        ></Route>
+        <Route
+          path="/tech"
+          element={<Tech cards={cards} cards1={cards1} />}
+        ></Route>
+        <Route
+          path="/science"
+          element={<Science cards={cards} cards1={cards1} />}
+        ></Route>
+        <Route
+          path="/health"
+          element={<Health cards={cards} cards1={cards1} />}
+        ></Route>
+      </Routes>
     </div>
   );
 };
