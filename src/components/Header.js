@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { extraMenuActions } from "../store/index";
@@ -23,8 +23,6 @@ const Header = () => {
   const toggleFormHandler = () => {
     dispatch(signInFormActions.open());
   };
-  // const [showMore, setShowMore] = useState(false);
-  // const [showSignInForm, setShowSignInForm] = useState(false);
 
   const useStyles = makeStyles((theme) => ({
     bbcLogo: {

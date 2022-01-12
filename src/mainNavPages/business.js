@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Album from "../components/pageLayout";
 
 const Business = () => {
-  const [cards, setCards] = useState([]);
-  const [cards1, setCards1] = useState([]);
+  const [businessMainCards, setBusinessMainCards] = useState([]);
+  const [businessBottomCards, setBusinessBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setCards(cardsFromServer);
+      setBusinessMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Business = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setCards1(cardsFromServer);
+      setBusinessBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -35,7 +35,7 @@ const Business = () => {
 
   return (
     <div>
-      <Album cards={cards} cards1={cards1} />
+      <Album cards={businessMainCards} cards1={businessBottomCards} />
     </div>
   );
 };

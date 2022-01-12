@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Album from "../components/pageLayout";
 
 const Politics = () => {
-  const [cards, setCards] = useState([]);
-  const [cards1, setCards1] = useState([]);
+  const [politicsMainCards, setPoliticsMainCards] = useState([]);
+  const [politicsBottomCards, setPoliticsBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setCards(cardsFromServer);
+      setPoliticsMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Politics = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setCards1(cardsFromServer);
+      setPoliticsBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -35,7 +35,7 @@ const Politics = () => {
 
   return (
     <div>
-      <Album cards={cards} cards1={cards1} />
+      <Album cards={politicsMainCards} cards1={politicsBottomCards} />
     </div>
   );
 };

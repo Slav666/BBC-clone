@@ -6,13 +6,13 @@ const Climate = () => {
   // const dispatch = useDispatch();
   // const cards = useSelector((state) => state.cards);
 
-  const [cards, setCards] = useState([]);
-  const [cards1, setCards1] = useState([]);
+  const [climateMainCards, setClimateMainCards] = useState([]);
+  const [climateBottomCards, setClimateBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setCards(cardsFromServer);
+      setClimateMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -20,7 +20,7 @@ const Climate = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setCards1(cardsFromServer);
+      setClimateBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -39,7 +39,7 @@ const Climate = () => {
 
   return (
     <div>
-      <Album cards={cards} cards1={cards1} />
+      <Album cards={climateMainCards} cards1={climateBottomCards} />
     </div>
   );
 };

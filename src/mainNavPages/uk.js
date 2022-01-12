@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Album from "../components/pageLayout";
 
 const Uk = () => {
-  const [cards7, setCards] = useState([]);
-  const [cards8, setCards1] = useState([]);
+  const [ukMainCards, setUkMainCards] = useState([]);
+  const [ukBottomCards, setUkBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setCards(cardsFromServer);
+      setUkMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Uk = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setCards1(cardsFromServer);
+      setUkBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -34,7 +34,7 @@ const Uk = () => {
   };
   return (
     <div>
-      <Album cards={cards7} cards1={cards8} />
+      <Album cards={ukMainCards} cards1={ukBottomCards} />
     </div>
   );
 };
