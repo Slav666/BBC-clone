@@ -4,7 +4,6 @@ import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
-import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
   },
   divider: {
     background: "lightgrey",
-    // paddingTop: "20px",
   },
 }));
 

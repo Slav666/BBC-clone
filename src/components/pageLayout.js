@@ -1,16 +1,13 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import React from "react";
+
 import classNames from "classnames";
-import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
 import Image1 from "../assets/image1.jpg";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core";
@@ -45,8 +42,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-//sm={6} md={3} lg={2} => line 92
 const Album = ({ cards, cards1 }) => {
   const classes = useStyles();
 
@@ -114,7 +109,6 @@ const Album = ({ cards, cards1 }) => {
                 <CardActionArea>
                   <CardMedia
                     style={{ height: "150px", width: "150" }}
-                    // component="img"
                     className={classes.cardMedia}
                     image={card.image}
                     title="sport"

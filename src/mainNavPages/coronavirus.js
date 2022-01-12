@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Album from "../components/pageLayout";
 
 const Coronavirus = () => {
-  const [cards4, setCards] = useState([]);
-  const [cards5, setCards1] = useState([]);
+  const [coronaVirusMainCards, setCoronaVirusMainCards] = useState([]);
+  const [coronaVirusBottomCards, setCoronaVirusBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setCards(cardsFromServer);
+      setCoronaVirusMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Coronavirus = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setCards1(cardsFromServer);
+      setCoronaVirusBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -34,7 +34,7 @@ const Coronavirus = () => {
   };
   return (
     <div>
-      <Album cards={cards4} cards1={cards5} />
+      <Album cards={coronaVirusMainCards} cards1={coronaVirusBottomCards} />
     </div>
   );
 };
