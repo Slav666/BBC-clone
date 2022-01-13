@@ -37,6 +37,44 @@
       "description": " Weather events, linked to a changing climate, brought misery to millions around the world in 2021 according to a new report."
     }
   ],
+  "cards2": [
+    {
+      "id": 1,
+      "image": "https://commonslibrary.parliament.uk/content/uploads/2021/11/domestic-flight-gerrie-van-der-walt-uOc3ldMSAiY-unsplash.jpg",
+      "title": "Denmark to make domestic flights fossil fuel free by 2030",
+      "description": "The European manufacturer Airbus has announced plans to develop hydrogen-fuelled planes that could be operational by 2035."
+    },
+    {
+      "id": 2,
+      "image": "https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg",
+      "title": "Green label plans for gas and nuclear prompts UE row",
+      "description": "A European Commission proposal says the two energy sources are key to green transition"
+    },
+    {
+      "id": 3,
+      "image": "https://cdn.britannica.com/46/76246-050-CEFCAD38/Denali-Alaska.jpg",
+      "title": "Alaska 'Icemageddon' warning follows heat record",
+      "description": "The coldest US state of Alaska has recorded its hottest-ever December day, amid an unusual winter warm spell."
+    },
+    {
+      "id": 4,
+      "image": "https://www.collinsdictionary.com/images/full/storm_167600330.jpg",
+      "title": "Climate change: Storm clouds gather after COP26",
+      "description": " s the progress that was made at the COP26 Glasgow climate summit already in jeopardy because of challenges in the year ahead?"
+    },
+    {
+      "id": 5,
+      "image": "https://placekitten.com/209/300",
+      "title": "Wildlife's winners and losers of 2021 - and how extreme weather set the tone",
+      "description": "Wildlife across the UK is increasingly suffering the impacts of extreme weather events and natural disasters"
+    },
+    {
+      "id": 6,
+      "image": "https://physicsworld.com/wp-content/uploads/2019/12/forest-fire-112221542-Shutterstock_Bruno-Ismael-Silva-Alves.jpg",
+      "title": "Climate change: Huge toll of extreme weather disasters in 2021",
+      "description": " Weather events, linked to a changing climate, brought misery to millions around the world in 2021 according to a new report."
+    }
+  ],
   "cards1": [
     {
       "id": 1,

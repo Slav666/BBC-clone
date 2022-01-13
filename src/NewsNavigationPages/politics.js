@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
 
-const Uk = () => {
-  const [ukMainCards, setUkMainCards] = useState([]);
-  const [ukBottomCards, setUkBottomCards] = useState([]);
+const Politics = () => {
+  const [politicsMainCards, setPoliticsMainCards] = useState([]);
+  const [politicsBottomCards, setPoliticsBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setUkMainCards(cardsFromServer);
+      setPoliticsMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Uk = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setUkBottomCards(cardsFromServer);
+      setPoliticsBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -32,11 +32,15 @@ const Uk = () => {
     const data = await res.json();
     return data;
   };
+
   return (
     <div>
-      <Album cards={ukMainCards} cards1={ukBottomCards} />
+      <MainContentLayout
+        cards={politicsMainCards}
+        cards1={politicsBottomCards}
+      />
     </div>
   );
 };
 
-export default Uk;
+export default Politics;

@@ -1,9 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
-import Typography from "@material-ui/core/Typography";
-import Link from "@material-ui/core/Link";
+import { Link, Typography, Grid, Divider, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,14 +11,17 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     background: "lightgrey",
   },
+  gridItem: {
+    paddingLeft: "10px",
+  },
 }));
 
-export default function MiddleDividers() {
+const BottomFooterSection = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <Grid container justifyContent="center" style={{ width: "80vw" }}>
+    <nav className={classes.root}>
+      <Grid container justifyContent="center">
         <Grid item direction="column" xs={1}>
           <Grid item>
             <Typography>
@@ -44,7 +43,7 @@ export default function MiddleDividers() {
           <Divider orientation="vertical" className={classes.divider} />
         </Grid>
 
-        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
+        <Grid item direction="column" className={classes.gridItem} xs={1}>
           <Grid item>
             <Typography>
               <Link color="inherit">News</Link>
@@ -64,7 +63,7 @@ export default function MiddleDividers() {
         <Grid item>
           <Divider orientation="vertical" className={classes.divider} />
         </Grid>
-        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
+        <Grid item direction="column" className={classes.gridItem} xs={1}>
           <Grid item>
             <Typography>
               <Link color="inherit">Sport</Link>
@@ -79,7 +78,7 @@ export default function MiddleDividers() {
         <Grid item>
           <Divider orientation="vertical" className={classes.divider} />
         </Grid>
-        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
+        <Grid item direction="column" className={classes.gridItem} xs={1}>
           <Grid item>
             <Typography>
               <Link color="inherit">Weather</Link>
@@ -98,7 +97,7 @@ export default function MiddleDividers() {
             variant="middle"
           />
         </Grid>
-        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
+        <Grid item direction="column" className={classes.gridItem} xs={1}>
           <Grid item>
             <Typography>
               <Link color="inherit">iPlayer</Link>
@@ -117,7 +116,7 @@ export default function MiddleDividers() {
             variant="middle"
           />
         </Grid>
-        <Grid item direction="column" style={{ paddingLeft: "10px" }} xs={1}>
+        <Grid item direction="column" className={classes.gridItem} xs={1}>
           <Grid item>
             <Typography>
               <Link color="inherit">Sounds</Link>
@@ -130,24 +129,10 @@ export default function MiddleDividers() {
           </Grid>
         </Grid>
       </Grid>
-      <div
-        style={{
-          paddingTop: "10px",
-          // width: "80vw",
-        }}
-      >
+      <section>
         <Divider className={classes.divider} />
-      </div>
-      <Grid
-        container
-        justifyContent="center"
-        style={{
-          backgroundColor: "#4c4c4c",
-          padding: "10px",
-          // width: "80vw",
-        }}
-        // spacing={}
-      >
+      </section>
+      <Grid container justifyContent="center">
         <Grid item>
           <Typography variant="small">
             <Link color="inherit">Terms of Use</Link>
@@ -197,6 +182,8 @@ export default function MiddleDividers() {
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </nav>
   );
-}
+};
+
+export default BottomFooterSection;

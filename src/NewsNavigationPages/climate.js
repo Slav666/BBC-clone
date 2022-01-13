@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
+import { useSelector, useDispatch } from "react-redux";
 
-const World = () => {
-  const [worldMainCards, setWorldMainCards] = useState([]);
-  const [worldBottomCards, setWorldBottomCards] = useState([]);
+const Climate = () => {
+  // const dispatch = useDispatch();
+  // const cards = useSelector((state) => state.cards);
+
+  const [climateMainCards, setClimateMainCards] = useState([]);
+  const [climateBottomCards, setClimateBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setWorldMainCards(cardsFromServer);
+      setClimateMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +20,7 @@ const World = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setWorldBottomCards(cardsFromServer);
+      setClimateBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -35,9 +39,9 @@ const World = () => {
 
   return (
     <div>
-      <Album cards={worldMainCards} cards1={worldBottomCards} />
+      <MainContentLayout cards={climateMainCards} cards1={climateBottomCards} />
     </div>
   );
 };
 
-export default World;
+export default Climate;

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
 
-const Tech = () => {
-  const [techMainCards, setTechMainCards] = useState([]);
-  const [techBottomCards, setTechBottomCards] = useState([]);
+const Science = () => {
+  const [scienceMainCards, setScienceMainCards] = useState([]);
+  const [scienceBottomCards, setScienceBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setTechMainCards(cardsFromServer);
+      setScienceMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Tech = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setTechBottomCards(cardsFromServer);
+      setScienceBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -35,9 +35,9 @@ const Tech = () => {
 
   return (
     <div>
-      <Album cards={techMainCards} cards1={techBottomCards} />
+      <MainContentLayout cards={scienceMainCards} cards1={scienceBottomCards} />
     </div>
   );
 };
 
-export default Tech;
+export default Science;
