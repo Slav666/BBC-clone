@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
-import { useSelector, useDispatch } from "react-redux";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
 
-const Climate = () => {
-  // const dispatch = useDispatch();
-  // const cards = useSelector((state) => state.cards);
-
-  const [climateMainCards, setClimateMainCards] = useState([]);
-  const [climateBottomCards, setClimateBottomCards] = useState([]);
+const Coronavirus = () => {
+  const [coronaVirusMainCards, setCoronaVirusMainCards] = useState([]);
+  const [coronaVirusBottomCards, setCoronaVirusBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setClimateMainCards(cardsFromServer);
+      setCoronaVirusMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -20,7 +16,7 @@ const Climate = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setClimateBottomCards(cardsFromServer);
+      setCoronaVirusBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -36,12 +32,14 @@ const Climate = () => {
     const data = await res.json();
     return data;
   };
-
   return (
     <div>
-      <Album cards={climateMainCards} cards1={climateBottomCards} />
+      <MainContentLayout
+        cards={coronaVirusMainCards}
+        cards1={coronaVirusBottomCards}
+      />
     </div>
   );
 };
 
-export default Climate;
+export default Coronavirus;

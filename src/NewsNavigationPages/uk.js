@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
 
-const Business = () => {
-  const [businessMainCards, setBusinessMainCards] = useState([]);
-  const [businessBottomCards, setBusinessBottomCards] = useState([]);
+const Uk = () => {
+  const [ukMainCards, setUkMainCards] = useState([]);
+  const [ukBottomCards, setUkBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setBusinessMainCards(cardsFromServer);
+      setUkMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Business = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setBusinessBottomCards(cardsFromServer);
+      setUkBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -32,12 +32,11 @@ const Business = () => {
     const data = await res.json();
     return data;
   };
-
   return (
     <div>
-      <Album cards={businessMainCards} cards1={businessBottomCards} />
+      <MainContentLayout cards={ukMainCards} cards1={ukBottomCards} />
     </div>
   );
 };
 
-export default Business;
+export default Uk;

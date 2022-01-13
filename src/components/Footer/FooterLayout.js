@@ -2,7 +2,6 @@ import React from "react";
 import TopFooterSection from "./TopFooterSection";
 import MiddleFooterSection from "./MiddleFooterSection";
 import BottomFooterSection from "./BottomFooterSection ";
-import { makeStyles } from "@material-ui/core/styles";
 
 const FooterLayout = () => {
   return (

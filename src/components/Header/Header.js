@@ -1,17 +1,19 @@
 import React from "react";
-import "../App.css";
+
 import { useSelector, useDispatch } from "react-redux";
-import { extraMenuActions } from "../store/index";
-import { signInFormActions } from "../store/index";
-import bbcLogo from "../assets/5842ab62a6515b1e0ad75b09.png";
+import HeaderNewsNavigation from "./HeaderNewsNavigation";
+import SignInForm from "../SignInForm/SignInForm";
+import SearchBar from "../SearchBar/Search";
 import { Typography, Grid, makeStyles, Link } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
-import Search from "./Search";
-import AccountCircleIcon from "@material-ui/icons/AccountCircle";
-import NotificationIcon from "@material-ui/icons/NotificationsRounded";
-import BottomNav from "./BottomNav";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import FormDialog from "./SignInForm";
+import {
+  // AccountCircleIcon,
+  NotificationsRounded,
+  ArrowDropDown,
+} from "@material-ui/icons";
+import { extraMenuActions } from "../../store/index";
+import { signInFormActions } from "../../store/index";
+import BBCLogo from "../../assets/BBCLogo.png";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -37,34 +39,32 @@ const Header = () => {
         borderBottom: "5px solid red",
       },
     },
+    logo: {
+      width: "70px",
+      height: "20px",
+    },
   }));
 
-  const styles = useStyles();
+  const classes = useStyles();
   return (
     <>
-      <div>
+      <section>
         <Grid container spacing={4} justifyContent="center" alignItems="center">
           <Grid item>
-            <img
-              src={bbcLogo}
-              alt="bbc-logo"
-              style={{ width: "70px", height: "20px" }}
-            />
+            <img src={BBCLogo} alt="bbc-logo" className={classes.logo} />
           </Grid>
-          <Grid item>
-            <AccountCircleIcon />
-          </Grid>
+          <Grid item>{/* <AccountCircleIcon /> */}</Grid>
           <Grid item>
             <Typography onClick={toggleFormHandler}>Sign in</Typography>
-            {showSignInForm && <FormDialog />}
+            {showSignInForm && <SignInForm />}
           </Grid>
           <Grid item>
-            <NotificationIcon />
+            <NotificationsRounded />
           </Grid>
           <Grid item>
-            <Typography variant="body1" className={styles.typography}>
+            <Typography variant="body1" className={classes.typography}>
               <Link
-                className={styles.link}
+                className={classes.link}
                 to="/home"
                 component={RouterLink}
                 underline="none"
@@ -151,11 +151,11 @@ const Header = () => {
             <Typography>More</Typography>
           </Grid>
           <Grid item>
-            <ArrowDropDownIcon onClick={toggleMenuHandler} />
+            <ArrowDropDown onClick={toggleMenuHandler} />
           </Grid>
 
           <Grid item>
-            <Search />
+            <SearchBar />
           </Grid>
         </Grid>
         {showExtraMenu && (
@@ -173,10 +173,10 @@ const Header = () => {
             </Grid>
           </Grid>
         )}
-      </div>
-      <div className="bottom-nav">
-        <BottomNav />
-      </div>
+      </section>
+      <section className="bottom-nav">
+        <HeaderNewsNavigation />
+      </section>
     </>
   );
 };

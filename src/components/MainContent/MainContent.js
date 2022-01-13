@@ -1,16 +1,17 @@
 import React from "react";
-import "../App.css";
+import "../../App.css";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Climate from "../mainNavPages/climate";
-import Coronavirus from "../mainNavPages/coronavirus";
-import Home from "../mainNavPages/home";
-import Uk from "../mainNavPages/uk";
-import Business from "../mainNavPages/business";
-import World from "../mainNavPages/world";
-import Health from "../mainNavPages/health";
-import Tech from "../mainNavPages/tech";
-import Science from "../mainNavPages/science";
-import Politics from "../mainNavPages/politics";
+import Climate from "../../NewsNavigationPages/climate";
+import Coronavirus from "../../NewsNavigationPages/coronavirus";
+import Home from "../../NewsNavigationPages/home";
+import Uk from "../../NewsNavigationPages/uk";
+import Business from "../../NewsNavigationPages/business";
+import World from "../../NewsNavigationPages/world";
+import Health from "../../NewsNavigationPages/health";
+import Tech from "../../NewsNavigationPages/tech";
+import Science from "../../NewsNavigationPages/science";
+import Politics from "../../NewsNavigationPages/politics";
+import SubpageLayout from "../subPageLayout/subPageLayout";
 
 const MainContent = ({
   homeMainCards,
@@ -93,6 +94,7 @@ const MainContent = ({
             <Health cards={healthMainCards} cards1={healthBottomCards} />
           }
         ></Route>
+        <Route path="/stories" element={<SubpageLayout />}></Route>
       </Routes>
     </div>
   );

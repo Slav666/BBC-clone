@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
 
-const Home = () => {
-  const [homeMainCards, setHomeMainCards] = useState([]);
-  const [homeBottomCards, setHomeBottomCards] = useState([]);
+const Health = () => {
+  const [healthMainCards, setHealthMainCArds] = useState([]);
+  const [healthBottomCards, setHealthBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setHomeMainCards(cardsFromServer);
+      setHealthMainCArds(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setHomeBottomCards(cardsFromServer);
+      setHealthBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -32,11 +32,12 @@ const Home = () => {
     const data = await res.json();
     return data;
   };
+
   return (
     <div>
-      <Album cards={homeMainCards} cards1={homeBottomCards} />
+      <MainContentLayout cards={healthMainCards} cards1={healthBottomCards} />
     </div>
   );
 };
 
-export default Home;
+export default Health;

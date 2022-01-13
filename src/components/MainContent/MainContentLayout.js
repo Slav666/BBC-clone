@@ -8,9 +8,10 @@ import CardMedia from "@material-ui/core/CardMedia";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import Image1 from "../assets/image1.jpg";
+import Image1 from "../../assets/footballTransfer.jpg";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   layout: {
@@ -42,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Album = ({ cards, cards1 }) => {
+const MainContentLayout = ({ cards, cards1 }) => {
   const classes = useStyles();
 
   return (
@@ -137,4 +138,4 @@ const Album = ({ cards, cards1 }) => {
 // };
 
 // export default withStyles(styles)(Album);
-export default Album;
+export default MainContentLayout;

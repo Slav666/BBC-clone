@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
-import { Grid, Link, Typography } from "@material-ui/core";
+import {
+  Grid,
+  Link,
+  Typography,
+  Button,
+  TextField,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@material-ui/core";
 
-export default function FormDialog() {
+const SignInForm = () => {
   const [open, setOpen] = useState(true);
 
   const handleClickOpen = () => {
@@ -73,4 +77,6 @@ export default function FormDialog() {
       </Dialog>
     </div>
   );
-}
+};
+
+export default SignInForm;

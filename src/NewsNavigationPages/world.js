@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
 
-const Coronavirus = () => {
-  const [coronaVirusMainCards, setCoronaVirusMainCards] = useState([]);
-  const [coronaVirusBottomCards, setCoronaVirusBottomCards] = useState([]);
+const World = () => {
+  const [worldMainCards, setWorldMainCards] = useState([]);
+  const [worldBottomCards, setWorldBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setCoronaVirusMainCards(cardsFromServer);
+      setWorldMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Coronavirus = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setCoronaVirusBottomCards(cardsFromServer);
+      setWorldBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -32,11 +32,12 @@ const Coronavirus = () => {
     const data = await res.json();
     return data;
   };
+
   return (
     <div>
-      <Album cards={coronaVirusMainCards} cards1={coronaVirusBottomCards} />
+      <MainContentLayout cards={worldMainCards} cards1={worldBottomCards} />
     </div>
   );
 };
 
-export default Coronavirus;
+export default World;

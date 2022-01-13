@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Album from "../components/pageLayout";
+import MainContentLayout from "../components/MainContent/MainContentLayout";
 
-const Politics = () => {
-  const [politicsMainCards, setPoliticsMainCards] = useState([]);
-  const [politicsBottomCards, setPoliticsBottomCards] = useState([]);
+const Tech = () => {
+  const [techMainCards, setTechMainCards] = useState([]);
+  const [techBottomCards, setTechBottomCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards();
-      setPoliticsMainCards(cardsFromServer);
+      setTechMainCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -16,7 +16,7 @@ const Politics = () => {
   useEffect(() => {
     const getCards = async () => {
       const cardsFromServer = await fetchCards1();
-      setPoliticsBottomCards(cardsFromServer);
+      setTechBottomCards(cardsFromServer);
     };
     getCards();
   }, []);
@@ -35,9 +35,9 @@ const Politics = () => {
 
   return (
     <div>
-      <Album cards={politicsMainCards} cards1={politicsBottomCards} />
+      <MainContentLayout cards={techMainCards} cards1={techBottomCards} />
     </div>
   );
 };
 
-export default Politics;
+export default Tech;

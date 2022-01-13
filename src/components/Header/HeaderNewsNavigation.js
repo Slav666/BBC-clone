@@ -2,13 +2,21 @@ import { Typography, Grid, makeStyles, Link } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
-const BottomNav = () => {
-  const useStyles = makeStyles((theme) => ({}));
+const HeaderNewsNavigation = () => {
+  const useStyles = makeStyles((theme) => ({
+    NewsNavigation: {
+      backgroundColor: "#bb1919",
+      minHeight: "10vh",
+      display: "flex",
+      justifyContent: "center",
+      // fontSize: "calc(10px + 2vmin)",
+      color: "white",
+    },
+  }));
 
-  const styles = useStyles();
-
+  const classes = useStyles();
   return (
-    <div>
+    <div className={classes.NewsNavigation}>
       <Grid container justifyContent="left">
         <Typography variant="h3">News</Typography>
       </Grid>
@@ -76,7 +84,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/world"
+              to="/business"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -160,7 +168,7 @@ const BottomNav = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/weather"
+              to="/stories"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -191,4 +199,4 @@ const BottomNav = () => {
     </div>
   );
 };
-export default BottomNav;
+export default HeaderNewsNavigation;
