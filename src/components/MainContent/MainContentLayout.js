@@ -73,7 +73,7 @@ const MainContentLayout = ({ cards, cards1 }) => {
               </Card>
             </Grid>
             {cards.map((card) => (
-              <Grid item key={card} sm={6} lg={3} spacing={1}>
+              <Grid item key={card.id} sm={6} lg={3} spacing={1}>
                 <Card className={classes.card}>
                   <CardActionArea>
                     <CardMedia

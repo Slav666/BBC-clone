@@ -1,5 +1,12 @@
 import React from "react";
-import { Link, Typography, Grid, Divider, makeStyles } from "@material-ui/core";
+import {
+  Link,
+  Typography,
+  Grid,
+  Divider,
+  makeStyles,
+  Container,
+} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     background: "lightgrey",
   },
   gridItem: {
-    paddingLeft: "10px",
+    // paddingLeft: "10px",
   },
 }));
 
@@ -21,8 +28,8 @@ const BottomFooterSection = () => {
 
   return (
     <nav className={classes.root}>
-      <Grid container justifyContent="center">
-        <Grid item direction="column" xs={1}>
+      <Container style={{ display: "flex", paddingBottom: "20px" }}>
+        <Grid container direction="column">
           <Grid item>
             <Typography>
               <Link color="inherit">Home</Link>
@@ -39,11 +46,8 @@ const BottomFooterSection = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Divider orientation="vertical" className={classes.divider} />
-        </Grid>
-
-        <Grid item direction="column" className={classes.gridItem} xs={1}>
+        <Divider className={classes.divider} />
+        <Grid container direction="column" className={classes.gridItem}>
           <Grid item>
             <Typography>
               <Link color="inherit">News</Link>
@@ -60,10 +64,8 @@ const BottomFooterSection = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Divider orientation="vertical" className={classes.divider} />
-        </Grid>
-        <Grid item direction="column" className={classes.gridItem} xs={1}>
+
+        <Grid container direction="column" className={classes.gridItem}>
           <Grid item>
             <Typography>
               <Link color="inherit">Sport</Link>
@@ -75,10 +77,8 @@ const BottomFooterSection = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Divider orientation="vertical" className={classes.divider} />
-        </Grid>
-        <Grid item direction="column" className={classes.gridItem} xs={1}>
+
+        <Grid container direction="column" className={classes.gridItem}>
           <Grid item>
             <Typography>
               <Link color="inherit">Weather</Link>
@@ -90,14 +90,8 @@ const BottomFooterSection = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Divider
-            orientation="vertical"
-            className={classes.divider}
-            variant="middle"
-          />
-        </Grid>
-        <Grid item direction="column" className={classes.gridItem} xs={1}>
+
+        <Grid container direction="column" className={classes.gridItem}>
           <Grid item>
             <Typography>
               <Link color="inherit">iPlayer</Link>
@@ -109,14 +103,8 @@ const BottomFooterSection = () => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item>
-          <Divider
-            orientation="vertical"
-            className={classes.divider}
-            variant="middle"
-          />
-        </Grid>
-        <Grid item direction="column" className={classes.gridItem} xs={1}>
+
+        <Grid container direction="column" className={classes.gridItem}>
           <Grid item>
             <Typography>
               <Link color="inherit">Sounds</Link>
@@ -128,55 +116,58 @@ const BottomFooterSection = () => {
             </Typography>
           </Grid>
         </Grid>
-      </Grid>
-      <section>
-        <Divider className={classes.divider} />
-      </section>
-      <Grid container justifyContent="center">
+      </Container>
+
+      <Grid
+        container
+        justifyContent="center"
+        spacing={4}
+        style={{ paddingBottom: "20px" }}
+      >
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">Terms of Use</Link>
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">About BBC</Link>
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">Privacy Policy</Link>
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">Cookies</Link>
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">Accessibility Help</Link>
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">Parental Guidance</Link>
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">Contact the BBC</Link>
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant="small">
+          <Typography variant="body1">
             <Link color="inherit">Get Personalised Newsletters</Link>
           </Typography>
         </Grid>
       </Grid>
-      <Grid container justifyContent="center">
+      <Grid container justifyContent="center" style={{ padding: "10px" }}>
         <Grid item>
-          <Typography>
+          <Typography variant="body1">
             Copyright © 2022 BBC. The BBC is not responsible for the content of
             external sites. Read about our approach to external linking.
           </Typography>

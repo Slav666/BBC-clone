@@ -8,6 +8,7 @@ import {
   Typography,
   Card,
   makeStyles,
+  Box,
 } from "@material-ui/core";
 
 import GanglandImage from "../../assets/ganglandImage.jpg";
@@ -17,14 +18,13 @@ import FootballTransferImage from "../../assets/footballTransfer.jpg";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: "100%",
     color: "white",
   },
   grid: {
     backgroundColor: "#ff8c00",
-    paddingTop: "20px",
-    paddingBottom: "20px",
-    maxWidth: "100%",
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
+    // maxWidth: "100%",
   },
   cardMedia: {
     height: "200px",
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 const MiddleFooterSection = () => {
   const classes = useStyles();
   return (
-    <section className={classes.root}>
+    <Box className={classes.root}>
       <Grid
         container
         justifyContent="center"
@@ -110,7 +110,7 @@ const MiddleFooterSection = () => {
           </Card>
         </Grid>
       </Grid>
-    </section>
+    </Box>
   );
 };
 export default MiddleFooterSection;

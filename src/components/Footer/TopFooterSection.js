@@ -6,6 +6,7 @@ import {
   Link,
   ListItemIcon,
   makeStyles,
+  Container,
 } from "@material-ui/core";
 
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
@@ -27,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: "15px",
     color: "white",
   },
+  icon: {
+    color: "#ffffff",
+  },
 }));
 
 const TopFooterSection = () => {
@@ -41,43 +45,65 @@ const TopFooterSection = () => {
 
       <Grid
         container
-        spacing={4}
+        spacing={2}
         justifyContent="center"
         className={classes.gridContainer}
       >
-        <Grid item xs={6} lg={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <ListItem button>
             <ListItemIcon>
-              <PhoneIphoneIcon />
+              <PhoneIphoneIcon className={classes.icon} />
             </ListItemIcon>
-            <Link color="inherit">On your mobile</Link>
+            <Typography>
+              <Link
+                color="inherit"
+                rel="noopener"
+                href="https://www.bbc.co.uk/news/10628994"
+              >
+                On your mobile
+              </Link>
+            </Typography>
           </ListItem>
         </Grid>
 
-        <Grid item xs={6} lg={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <ListItem button>
             <ListItemIcon>
-              <MicIcon />
+              <MicIcon className={classes.icon} />
             </ListItemIcon>
-            <Link color="inherit">On smart speakers</Link>
+            <Link color="inherit" rel="noopener">
+              On smart speakers
+            </Link>
           </ListItem>
         </Grid>
 
-        <Grid item xs={6} lg={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <ListItem button>
             <ListItemIcon>
-              <MoveToInboxIcon />
+              <MoveToInboxIcon className={classes.icon} />
             </ListItemIcon>
-            <Link color="inherit">Get news alert</Link>
+            <Link
+              color="inherit"
+              rel="noopener"
+              href="https://www.bbc.co.uk/news/10628323"
+            >
+              Get news alert
+            </Link>
           </ListItem>
         </Grid>
 
-        <Grid item xs={6} lg={2}>
+        <Grid item xs={12} sm={6} md={3}>
           <ListItem button>
             <ListItemIcon>
-              <ContactMailIcon />
+              <ContactMailIcon className={classes.icon} />
             </ListItemIcon>
-            <Link color="inherit">Contact BBC news</Link>
+            <Link
+              color="inherit"
+              rel="noopener"
+              href="https://www.bbc.co.uk/news/20039682"
+            >
+              Contact BBC news
+            </Link>
           </ListItem>
         </Grid>
       </Grid>
