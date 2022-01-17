@@ -5,8 +5,8 @@ import BottomFooterSection from "./BottomFooterSection ";
 
 const FooterLayout = () => {
   return (
-    <div style={{ width: "100vw" }}>
-      <TopFooterSection style={{ maxWidth: "100%" }} />
+    <div>
+      <TopFooterSection />
       <MiddleFooterSection />
       <BottomFooterSection />
     </div>

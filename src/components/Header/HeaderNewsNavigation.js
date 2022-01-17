@@ -1,4 +1,11 @@
-import { Typography, Grid, makeStyles, Link } from "@material-ui/core";
+import {
+  Typography,
+  Grid,
+  makeStyles,
+  Link,
+  Box,
+  Container,
+} from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
@@ -7,20 +14,40 @@ const HeaderNewsNavigation = () => {
     NewsNavigation: {
       backgroundColor: "#bb1919",
       minHeight: "10vh",
-      display: "flex",
-      justifyContent: "center",
+      // display: "flex",
+      // flexDirection: "column",
+      // justifyContent: "center",
       // fontSize: "calc(10px + 2vmin)",
       color: "white",
+    },
+    container: {
+      display: "flex",
+    },
+    typography: {
+      paddingRight: "10px",
     },
   }));
 
   const classes = useStyles();
   return (
     <div className={classes.NewsNavigation}>
-      <Grid container justifyContent="left">
-        <Typography variant="h3">News</Typography>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Grid item>
+          <Typography variant="h3">News</Typography>
+        </Grid>
       </Grid>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        spacing={1}
+      >
         <Grid item>
           <Typography variant="body1">
             <Link
@@ -189,11 +216,15 @@ const HeaderNewsNavigation = () => {
             </Link>
           </Typography>
         </Grid>
+
         <Grid item>
-          <Typography variant="body1">More</Typography>
-        </Grid>
-        <Grid item>
-          <ArrowDropDownIcon />
+          <Container className={classes.container}>
+            <Typography variant="body1" className={classes.typography}>
+              More
+            </Typography>
+
+            <ArrowDropDownIcon />
+          </Container>
         </Grid>
       </Grid>
     </div>
