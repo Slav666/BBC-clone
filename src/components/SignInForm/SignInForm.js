@@ -12,19 +12,14 @@ import {
 } from "@material-ui/core";
 
 const SignInForm = () => {
-  const [open, setOpen] = useState(true);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
+  const [closeForm, setFormClose] = useState(true);
+  const closeFormHandler = () => {
+    setFormClose(!closeForm);
   };
 
   return (
     <div>
-      <Dialog open={open} onClose={handleClose} onClick={handleClickOpen}>
+      <Dialog onClose={closeFormHandler}>
         <DialogTitle>Sign Inn</DialogTitle>
         <DialogContent>
           <TextField
@@ -55,7 +50,7 @@ const SignInForm = () => {
             spacing={2}
           >
             <Grid item>
-              <Button variant="contained" size="large" onClick={handleClose}>
+              <Button variant="contained" size="large">
                 Sign Inn
               </Button>
             </Grid>
