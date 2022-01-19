@@ -5,7 +5,7 @@ import Header from "./Header";
 describe("Header section tests", () => {
   it("renders Home link in the top header section", () => {
     render(<Header />);
-    const linkElement = screen.getByText(/home/i);
+    const linkElement = screen.getByRole("link", { name: "Home" });
     expect(linkElement).toBeInTheDocument();
   });
 });
