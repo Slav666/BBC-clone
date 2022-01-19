@@ -1,10 +1,13 @@
 import React from "react";
 
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "../../test/test.utils";
 import HeaderNewsNavigation from "./HeaderNewsNavigation";
 
-test("renders home link", () => {
-  render(<HeaderNewsNavigation />);
-  const linkElement = screen.getByText("Home");
-  expect(linkElement).toBeInTheDocument();
+describe("Header navigation tests", () => {
+  it("renders home link in the header navigation bar", () => {
+    render(<HeaderNewsNavigation />);
+    const linkElement = screen.getByText("Home");
+    expect(linkElement).toBeInTheDocument();
+    // screen.debug();
+  });
 });

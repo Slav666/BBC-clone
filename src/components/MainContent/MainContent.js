@@ -1,6 +1,6 @@
 import React from "react";
 import "../../App.css";
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
 import Climate from "../../NewsNavigationPages/climate";
 import Coronavirus from "../../NewsNavigationPages/coronavirus";
 import Home from "../../NewsNavigationPages/home";
@@ -94,7 +94,7 @@ const MainContent = ({
             <Health cards={healthMainCards} cards1={healthBottomCards} />
           }
         ></Route>
-        <Route path="/stories" element={<SubpageLayout />}></Route>
+        {/* <Route path="/stories" element={<SubpageLayout />}></Route> */}
       </Routes>
     </div>
   );
