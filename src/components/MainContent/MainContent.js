@@ -94,7 +94,7 @@ const MainContent = ({
             <Health cards={healthMainCards} cards1={healthBottomCards} />
           }
         ></Route>
-        {/* <Route path="/stories" element={<SubpageLayout />}></Route> */}
+        <Route path="/stories" element={<SubpageLayout />}></Route>
       </Routes>
     </div>
   );

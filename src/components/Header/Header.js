@@ -163,7 +163,7 @@ const Header = () => {
           <Container className={classes.container}>
             <Typography>More</Typography>
 
-            <ArrowDropDown onClick={toggleMenuHandler} />
+            <ArrowDropDown onClick={toggleMenuHandler} role="button" />
           </Container>
         </Grid>
 

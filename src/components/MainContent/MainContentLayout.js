@@ -11,6 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import Image1 from "../../assets/footballTransfer.jpg";
 import Divider from "@material-ui/core/Divider";
 import { makeStyles } from "@material-ui/core";
+import { Link as RouterLink } from "react-router-dom";
 import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
@@ -73,9 +74,9 @@ const MainContentLayout = ({ cards, cards1 }) => {
               </Card>
             </Grid>
             {cards.map((card) => (
-              <Grid item key={card.id} sm={6} lg={3} spacing={1}>
+              <Grid item key={card.id} sm={6} lg={3}>
                 <Card className={classes.card}>
-                  <CardActionArea>
+                  <CardActionArea component={RouterLink} to="/stories">
                     <CardMedia
                       style={{ height: "150px", width: "150" }}
                       // component="img"
@@ -87,7 +88,7 @@ const MainContentLayout = ({ cards, cards1 }) => {
                   <CardContent className={classes.cardContent}>
                     <Typography
                       gutterBottom
-                      variant="small"
+                      variant="body1"
                       component="h4"
                       children={card.title}
                     />
@@ -105,7 +106,7 @@ const MainContentLayout = ({ cards, cards1 }) => {
       <div className={classNames(classes.layout, classes.cardGrid)}>
         <Grid container>
           {cards1.map((card) => (
-            <Grid item key={card}>
+            <Grid item key={card.id}>
               <Card className={classes.card}>
                 <CardActionArea>
                   <CardMedia
@@ -118,7 +119,7 @@ const MainContentLayout = ({ cards, cards1 }) => {
                 <CardContent className={classes.cardContent}>
                   <Typography
                     gutterBottom
-                    variant="small"
+                    variant="body1"
                     component="h4"
                     children={card.title}
                   />
