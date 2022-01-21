@@ -223,7 +223,7 @@ const HeaderNewsNavigation = () => {
               More
             </Typography>
 
-            <ArrowDropDownIcon />
+            <ArrowDropDownIcon name="icon" />
           </Container>
         </Grid>
       </Grid>

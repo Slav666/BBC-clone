@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "../../assets/ganglandImage.jpg";
 
 import {
@@ -11,9 +11,29 @@ import {
   Link,
   Box,
   Grid,
+  Container,
 } from "@material-ui/core";
 
 export default function BoxSx() {
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    const getArticles = async () => {
+      const cardsFromApi = await fetchArticles();
+      setArticles(cardsFromApi);
+    };
+    getArticles();
+  }, []);
+
+  const fetchArticles = async () => {
+    const res = await fetch(
+      "https://newsapi.org/v2/everything?q=tesla&from=2021-12-21&sortBy=publishedAt&apiKey=ba57445502c64f0abafb734fb946c26b"
+    );
+    const data = await res.json();
+    console.log(data);
+    return data;
+  };
+
   return (
     <Grid
       container
@@ -37,19 +57,24 @@ export default function BoxSx() {
           },
         }}
       >
-        <Box
-          style={{
-            backgroundColor: "pink",
-            width: "100%",
-            height: "100%",
-            justifyContent: "center",
-            display: "flex",
-          }}
+        <Container
+          style={{ marginTop: "10px", marginBottom: "10px" }}
+          // style={{
+          //   backgroundColor: "pink",
+          //   width: "100%",
+          //   height: "100%",
+          //   justifyContent: "center",
+          //   display: "flex",
+          // }}
         >
           {/* <Typography variant="h2">Article Title</Typography> */}
           <Card>
             <CardContent>
-              <Typography variant="h2">Article Title</Typography>
+              <Typography variant="h6">
+                {articles.articles.map((article) => (
+                  <p key={article.id}>{article.article.id}</p>
+                ))}
+              </Typography>
             </CardContent>
             <CardMedia
               component="img"
@@ -116,7 +141,7 @@ export default function BoxSx() {
               <Button size="small">Learn More</Button>
             </CardActions>
           </Card>
-        </Box>
+        </Container>
       </Grid>
 
       <Grid
