@@ -2,40 +2,28 @@ import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
 
 const World = () => {
-  const [worldMainCards, setWorldMainCards] = useState([]);
-  const [worldBottomCards, setWorldBottomCards] = useState([]);
+  const [worldCards, setWorldCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
-      const cardsFromServer = await fetchCards();
-      setWorldMainCards(cardsFromServer);
+      const articlesFromNewsApi = await fetchArticles();
+      setWorldCards(articlesFromNewsApi);
     };
     getCards();
   }, []);
 
-  useEffect(() => {
-    const getCards = async () => {
-      const cardsFromServer = await fetchCards1();
-      setWorldBottomCards(cardsFromServer);
-    };
-    getCards();
-  }, []);
-
-  const fetchCards = async () => {
-    const res = await fetch("http://localhost:5000/cards");
+  const fetchArticles = async () => {
+    const res = await fetch(
+      "http://newsapi.org/v2/everything?q=rich&from=2022-01-01&sortBy=publishedAt&apiKey=ba57445502c64f0abafb734fb946c26b"
+    );
     const data = await res.json();
-    return data;
-  };
-
-  const fetchCards1 = async () => {
-    const res = await fetch("http://localhost:5000/cards1");
-    const data = await res.json();
-    return data;
+    const articles = data.articles;
+    return articles;
   };
 
   return (
     <div>
-      <MainContentLayout cards={worldMainCards} cards1={worldBottomCards} />
+      <MainContentLayout cards={worldCards} />
     </div>
   );
 };

@@ -2,40 +2,28 @@ import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
 
 const Health = () => {
-  const [healthMainCards, setHealthMainCArds] = useState([]);
-  const [healthBottomCards, setHealthBottomCards] = useState([]);
+  const [healthCards, setHealthCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
-      const cardsFromServer = await fetchCards();
-      setHealthMainCArds(cardsFromServer);
+      const articlesFromNewsApi = await fetchArticles();
+      setHealthCards(articlesFromNewsApi);
     };
     getCards();
   }, []);
 
-  useEffect(() => {
-    const getCards = async () => {
-      const cardsFromServer = await fetchCards1();
-      setHealthBottomCards(cardsFromServer);
-    };
-    getCards();
-  }, []);
-
-  const fetchCards = async () => {
-    const res = await fetch("http://localhost:5000/cards");
+  const fetchArticles = async () => {
+    const res = await fetch(
+      "http://newsapi.org/v2/everything?q=rich&from=2022-01-01&sortBy=publishedAt&apiKey=ba57445502c64f0abafb734fb946c26b"
+    );
     const data = await res.json();
-    return data;
-  };
-
-  const fetchCards1 = async () => {
-    const res = await fetch("http://localhost:5000/cards1");
-    const data = await res.json();
-    return data;
+    const articles = data.articles;
+    return articles;
   };
 
   return (
     <div>
-      <MainContentLayout cards={healthMainCards} cards1={healthBottomCards} />
+      <MainContentLayout cards={healthCards} />
     </div>
   );
 };

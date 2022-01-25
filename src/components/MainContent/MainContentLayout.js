@@ -1,18 +1,19 @@
 import React from "react";
 
 import classNames from "classnames";
-import Card from "@material-ui/core/Card";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import Image1 from "../../assets/footballTransfer.jpg";
-import Divider from "@material-ui/core/Divider";
-import { makeStyles } from "@material-ui/core";
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+  makeStyles,
+  CssBaseline,
+} from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
-import Link from "@material-ui/core/Link";
+import footballTransferImage from "../../assets/footballTransfer.jpg";
+import SibPageLayout from "../subPageLayout/subPageLayout";
 
 const useStyles = makeStyles((theme) => ({
   layout: {
@@ -36,7 +37,12 @@ const useStyles = makeStyles((theme) => ({
     width: 300,
   },
   cardMedia: {
-    paddingTop: "56.25%", // 16:9
+    paddingTop: "56.25%",
+    height: "150px",
+    width: "250px",
+  },
+  cardMediaFirstCard: {
+    paddingTop: "56.25%",
     height: 250,
   },
   cardContent: {
@@ -44,11 +50,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MainContentLayout = ({ cards, cards1 }) => {
+const MainContentLayout = ({ cards }) => {
   const classes = useStyles();
-
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <main>
         <div className={classNames(classes.layout, classes.cardGrid)}>
@@ -56,9 +61,9 @@ const MainContentLayout = ({ cards, cards1 }) => {
             <Grid item sm={6}>
               <Card>
                 <CardMedia
-                  className={classes.cardMedia}
-                  image={Image1}
-                  title="Image title"
+                  className={classes.cardMediaFirstCard}
+                  image={footballTransferImage}
+                  title="Image of football transfer"
                 />
                 <CardContent className={classes.cardContent}>
                   <Typography gutterBottom variant="h5" component="h2">
@@ -74,15 +79,13 @@ const MainContentLayout = ({ cards, cards1 }) => {
               </Card>
             </Grid>
             {cards.map((card) => (
-              <Grid item key={card.id} sm={6} lg={3}>
+              <Grid item key={card.title} sm={6} lg={3}>
                 <Card className={classes.card}>
                   <CardActionArea component={RouterLink} to="/stories">
                     <CardMedia
-                      style={{ height: "150px", width: "150" }}
-                      // component="img"
                       className={classes.cardMedia}
-                      image={card.image}
-                      title="sport"
+                      image={card.urlToImage}
+                      title={card.title}
                     />
                   </CardActionArea>
                   <CardContent className={classes.cardContent}>
@@ -100,43 +103,8 @@ const MainContentLayout = ({ cards, cards1 }) => {
           </Grid>
         </div>
       </main>
-
-      <Divider />
-
-      <div className={classNames(classes.layout, classes.cardGrid)}>
-        <Grid container>
-          {cards1.map((card) => (
-            <Grid item key={card.id}>
-              <Card className={classes.card}>
-                <CardActionArea>
-                  <CardMedia
-                    style={{ height: "150px", width: "150" }}
-                    className={classes.cardMedia}
-                    image={card.image}
-                    title="sport"
-                  />
-                </CardActionArea>
-                <CardContent className={classes.cardContent}>
-                  <Typography
-                    gutterBottom
-                    variant="body1"
-                    component="h4"
-                    children={card.title}
-                  />
-                  <Typography children={card.description} />
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </div>
-    </React.Fragment>
+    </>
   );
 };
 
-// Album.propTypes = {
-//   classes: PropTypes.object.isRequired,
-// };
-
-// export default withStyles(styles)(Album);
 export default MainContentLayout;
