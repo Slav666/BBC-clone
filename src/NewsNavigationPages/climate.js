@@ -1,45 +1,28 @@
 import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
-import { useSelector, useDispatch } from "react-redux";
 
 const Climate = () => {
-  // const dispatch = useDispatch();
-  // const cards = useSelector((state) => state.cards);
-
-  const [climateMainCards, setClimateMainCards] = useState([]);
-  const [climateBottomCards, setClimateBottomCards] = useState([]);
-
+  const [climateCards, setClimateCards] = useState([]);
   useEffect(() => {
     const getCards = async () => {
-      const cardsFromServer = await fetchCards();
-      setClimateMainCards(cardsFromServer);
+      const articlesFromNewsApi = await fetchArticles();
+      setClimateCards(articlesFromNewsApi);
     };
     getCards();
   }, []);
 
-  useEffect(() => {
-    const getCards = async () => {
-      const cardsFromServer = await fetchCards1();
-      setClimateBottomCards(cardsFromServer);
-    };
-    getCards();
-  }, []);
-
-  const fetchCards = async () => {
-    const res = await fetch("http://localhost:5000/cards");
+  const fetchArticles = async () => {
+    const res = await fetch(
+      "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=ba57445502c64f0abafb734fb946c26b"
+    );
     const data = await res.json();
-    return data;
-  };
-
-  const fetchCards1 = async () => {
-    const res = await fetch("http://localhost:5000/cards1");
-    const data = await res.json();
-    return data;
+    const articles = data.articles;
+    return articles;
   };
 
   return (
     <div>
-      <MainContentLayout cards={climateMainCards} cards1={climateBottomCards} />
+      <MainContentLayout cards={climateCards} />
     </div>
   );
 };

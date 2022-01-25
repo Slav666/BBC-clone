@@ -1,6 +1,5 @@
 import React from "react";
-import "../../App.css";
-import { Route, Routes, Navigate, BrowserRouter } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import Climate from "../../NewsNavigationPages/climate";
 import Coronavirus from "../../NewsNavigationPages/coronavirus";
 import Home from "../../NewsNavigationPages/home";
@@ -14,86 +13,46 @@ import Politics from "../../NewsNavigationPages/politics";
 import SubpageLayout from "../subPageLayout/subPageLayout";
 
 const MainContent = ({
-  homeMainCards,
-  homeBottomCards,
-  climateMainCards,
-  climateBottomCards,
-  coronaVirusMainCards,
-  coronaVirusBottomCards,
-  healthMainCards,
-  healthBottomCards,
-  politicsMainCards,
-  politicsBottomCards,
-  ukMainCards,
-  ukBottomCards,
-  worldMainCards,
-  worldBottomCards,
-  scienceMainCArds,
-  scienceBottomCards,
-  businessMainCards,
-  businessBottomCards,
-  techMainCards,
-  techBottomCards,
+  homeCards,
+  climateCards,
+  coronaVirusCards,
+  healthCards,
+  politicsCards,
+  ukCards,
+  worldCards,
+  scienceCards,
+  businessCards,
+  techCards,
 }) => {
   return (
     <div className="main-content">
       <Routes>
         <Route path="/" element={<Navigate to="/home" />}></Route>
-        <Route
-          path="/home"
-          element={<Home cards={homeMainCards} cards1={homeBottomCards} />}
-        ></Route>
+        <Route path="/home" element={<Home cards={homeCards} />}></Route>
         <Route
           path="/climate"
-          element={
-            <Climate cards={climateMainCards} cards1={climateBottomCards} />
-          }
+          element={<Climate cards={climateCards} />}
         ></Route>
         <Route
           path="/coronavirus"
-          element={
-            <Coronavirus
-              cards={coronaVirusMainCards}
-              cards1={coronaVirusBottomCards}
-            />
-          }
+          element={<Coronavirus cards={coronaVirusCards} />}
         ></Route>
-        <Route
-          path="/uk"
-          element={<Uk cards={ukMainCards} cards1={ukBottomCards} />}
-        ></Route>
-        <Route
-          path="/world"
-          element={<World cards={worldMainCards} cards1={worldBottomCards} />}
-        ></Route>
+        <Route path="/uk" element={<Uk cards={ukCards} />}></Route>
+        <Route path="/world" element={<World cards={worldCards} />}></Route>
         <Route
           path="/business"
-          element={
-            <Business cards={businessMainCards} cards1={businessBottomCards} />
-          }
+          element={<Business cards={businessCards} />}
         ></Route>
         <Route
           path="/politics"
-          element={
-            <Politics cards={politicsMainCards} cards1={politicsBottomCards} />
-          }
+          element={<Politics cards={politicsCards} />}
         ></Route>
-        <Route
-          path="/tech"
-          element={<Tech cards={techMainCards} cards1={techBottomCards} />}
-        ></Route>
+        <Route path="/tech" element={<Tech cards={techCards} />}></Route>
         <Route
           path="/science"
-          element={
-            <Science cards={scienceMainCArds} cards1={scienceBottomCards} />
-          }
+          element={<Science cards={scienceCards} />}
         ></Route>
-        <Route
-          path="/health"
-          element={
-            <Health cards={healthMainCards} cards1={healthBottomCards} />
-          }
-        ></Route>
+        <Route path="/health" element={<Health cards={healthCards} />}></Route>
         <Route path="/stories" element={<SubpageLayout />}></Route>
       </Routes>
     </div>

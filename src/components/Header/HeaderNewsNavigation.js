@@ -3,7 +3,6 @@ import {
   Grid,
   makeStyles,
   Link,
-  Box,
   Container,
 } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";

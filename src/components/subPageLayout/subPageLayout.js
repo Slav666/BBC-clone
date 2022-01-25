@@ -12,28 +12,40 @@ import {
   Box,
   Grid,
   Container,
+  makeStyles,
 } from "@material-ui/core";
 
-export default function BoxSx() {
-  const [articles, setArticles] = useState([]);
+const useStyles = makeStyles((theme) => ({
+  layout: {},
+  container: {
+    marginTop: "5px",
+    marginBottom: "5px",
+    padding: "10%",
+    backgroundColor: "red",
+  },
+  leftSideMainBox: {
+    backgroundColor: "pink",
+    width: "100%",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    marginTop: "5px",
+    marginBottom: "5px",
+  },
+  smallBox: {
+    background: "#F0F0F0",
+    width: "70%",
+    height: "80px",
+    marginLeft: "auto",
+    marginRight: "auto",
+    padding: "20px",
+    marginTop: "40px",
+  },
+  cardMedia: {},
+}));
 
-  useEffect(() => {
-    const getArticles = async () => {
-      const cardsFromApi = await fetchArticles();
-      setArticles(cardsFromApi);
-    };
-    getArticles();
-  }, []);
-
-  const fetchArticles = async () => {
-    const res = await fetch(
-      "https://newsapi.org/v2/everything?q=tesla&from=2021-12-21&sortBy=publishedAt&apiKey=ba57445502c64f0abafb734fb946c26b"
-    );
-    const data = await res.json();
-    console.log(data);
-    return data;
-  };
-
+const SubPageLayout = () => {
+  const classes = useStyles();
   return (
     <Grid
       container
@@ -57,24 +69,10 @@ export default function BoxSx() {
           },
         }}
       >
-        <Container
-          style={{ marginTop: "10px", marginBottom: "10px" }}
-          // style={{
-          //   backgroundColor: "pink",
-          //   width: "100%",
-          //   height: "100%",
-          //   justifyContent: "center",
-          //   display: "flex",
-          // }}
-        >
-          {/* <Typography variant="h2">Article Title</Typography> */}
+        <Container className={classes.container}>
           <Card>
             <CardContent>
-              <Typography variant="h6">
-                {articles.articles.map((article) => (
-                  <p key={article.id}>{article.article.id}</p>
-                ))}
-              </Typography>
+              <Typography variant="h6"></Typography>
             </CardContent>
             <CardMedia
               component="img"
@@ -84,7 +82,7 @@ export default function BoxSx() {
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Lizard
+                Title
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 Dr Hans Kluge said a "west-to-east tidal wave" of Omicron was
@@ -136,10 +134,6 @@ export default function BoxSx() {
                 yet clear whether this is needed.
               </Typography>
             </CardContent>
-            <CardActions>
-              <Button size="small">Share</Button>
-              <Button size="small">Learn More</Button>
-            </CardActions>
           </Card>
         </Container>
       </Grid>
@@ -159,61 +153,20 @@ export default function BoxSx() {
           },
         }}
       >
-        <Box
-          style={{
-            backgroundColor: "pink",
-            width: "100%",
-            height: "100%",
-            // justifyContent: "center",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Box
-            style={{
-              background: "#F0F0F0",
-              width: "70%",
-              height: "80px",
-              marginLeft: "auto",
-              marginRight: "auto",
-              padding: "20px",
-              marginTop: "40px",
-            }}
-          >
+        <Box className={classes.leftSideMainBox}>
+          <Box className={classes.smallBox}>
             <Typography>
               <Link>Senior Tories urge PM to quit after party apology</Link>
             </Typography>
           </Box>
-          <Box
-            style={{
-              background: "#F0F0F0",
-              width: "70%",
-              height: "80px",
-              marginLeft: "auto",
-              marginRight: "auto",
-              padding: "20px",
-              marginTop: "40px",
-            }}
-          >
+          <Box className={classes.smallBox}>
             <Typography>
               <Link>
                 Jonathan Van-Tam to leave role as deputy chief medical officer
               </Link>
             </Typography>
           </Box>
-          <Box
-            style={{
-              background: "#F0F0F0",
-              width: "70%",
-              height: "80px",
-              marginLeft: "auto",
-              marginRight: "auto",
-              display: "flex",
-              justifyItems: "center",
-              padding: "20px",
-              marginTop: "40px",
-            }}
-          >
+          <Box className={classes.smallBox}>
             <Typography>
               <Link>Ministers back PM's call to wait for party inquiry</Link>
             </Typography>
@@ -257,4 +210,6 @@ export default function BoxSx() {
       </Grid>
     </Grid>
   );
-}
+};
+
+export default SubPageLayout;

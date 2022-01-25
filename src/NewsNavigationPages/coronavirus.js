@@ -2,42 +2,29 @@ import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
 
 const Coronavirus = () => {
-  const [coronaVirusMainCards, setCoronaVirusMainCards] = useState([]);
-  const [coronaVirusBottomCards, setCoronaVirusBottomCards] = useState([]);
+  const [coronaVirusCards, setCoronaVirusCards] = useState([]);
 
   useEffect(() => {
     const getCards = async () => {
-      const cardsFromServer = await fetchCards();
-      setCoronaVirusMainCards(cardsFromServer);
+      const articlesFromNewsApi = await fetchArticles();
+      setCoronaVirusCards(articlesFromNewsApi);
     };
     getCards();
   }, []);
 
-  useEffect(() => {
-    const getCards = async () => {
-      const cardsFromServer = await fetchCards1();
-      setCoronaVirusBottomCards(cardsFromServer);
-    };
-    getCards();
-  }, []);
+  const fetchArticles = async () => {
+    const res = await fetch(
+      "http://newsapi.org/v2/everything?q=rich&from=2022-01-15&sortBy=publishedAt&apiKey=ba57445502c64f0abafb734fb946c26b"
+    );
 
-  const fetchCards = async () => {
-    const res = await fetch("http://localhost:5000/cards");
     const data = await res.json();
-    return data;
+    const articles = data.articles;
+    return articles;
   };
 
-  const fetchCards1 = async () => {
-    const res = await fetch("http://localhost:5000/cards1");
-    const data = await res.json();
-    return data;
-  };
   return (
     <div>
-      <MainContentLayout
-        cards={coronaVirusMainCards}
-        cards1={coronaVirusBottomCards}
-      />
+      <MainContentLayout cards={coronaVirusCards} />
     </div>
   );
 };
