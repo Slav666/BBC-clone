@@ -6,7 +6,6 @@ import {
   Link,
   ListItemIcon,
   makeStyles,
-  Container,
 } from "@material-ui/core";
 
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
@@ -71,7 +70,11 @@ const TopFooterSection = () => {
             <ListItemIcon>
               <MicIcon className={classes.icon} />
             </ListItemIcon>
-            <Link color="inherit" rel="noopener">
+            <Link
+              color="inherit"
+              rel="noopener"
+              href="https://www.bbc.co.uk/news/10628323"
+            >
               On smart speakers
             </Link>
           </ListItem>

@@ -18,8 +18,12 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     background: "lightgrey",
   },
-  gridItem: {
-    // paddingLeft: "10px",
+  container: {
+    display: "flex",
+    paddingBottom: "20px",
+  },
+  grid: {
+    paddingBottom: "20px",
   },
 }));
 
@@ -28,7 +32,7 @@ const BottomFooterSection = () => {
 
   return (
     <nav className={classes.root}>
-      <Container style={{ display: "flex", paddingBottom: "20px" }}>
+      <Container className={classes.container}>
         <Grid container direction="column">
           <Grid item>
             <Typography>
@@ -122,7 +126,7 @@ const BottomFooterSection = () => {
         container
         justifyContent="center"
         spacing={4}
-        style={{ paddingBottom: "20px" }}
+        className={classes.grid}
       >
         <Grid item>
           <Typography variant="body1">
@@ -165,7 +169,7 @@ const BottomFooterSection = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Grid container justifyContent="center" style={{ padding: "10px" }}>
+      <Grid container justifyContent="center">
         <Grid item>
           <Typography variant="body1">
             Copyright © 2022 BBC. The BBC is not responsible for the content of

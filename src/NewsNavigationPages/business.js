@@ -16,8 +16,10 @@ const Business = () => {
       "http://newsapi.org/v2/everything?q=rich&from=2022-01-01&sortBy=publishedAt&apiKey=ba57445502c64f0abafb734fb946c26b"
     );
     const data = await res.json();
+    console.log("data", data);
     const articles = data.articles;
     return articles;
+    // return data;
   };
 
   return (

@@ -19,6 +19,7 @@ const Tech = () => {
     const data = await res.json();
     const articles = data.articles;
     return articles;
+    // return data;
   };
 
   return (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Image from "../../assets/ganglandImage.jpg";
+import { useParams } from "react-router-dom";
+import TestImage from "../../assets/ganglandImage.jpg";
 
 import {
   Typography,
@@ -21,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "5px",
     marginBottom: "5px",
     padding: "10%",
-    backgroundColor: "red",
+    // backgroundColor: "red",
   },
   leftSideMainBox: {
     backgroundColor: "pink",
@@ -44,8 +45,12 @@ const useStyles = makeStyles((theme) => ({
   cardMedia: {},
 }));
 
-const SubPageLayout = () => {
+const SubPageLayout = ({ cards }) => {
+  const { title } = useParams();
+  console.log("fromSubpageLayout", cards);
+  // console.log(title);
   const classes = useStyles();
+
   return (
     <Grid
       container
@@ -77,15 +82,18 @@ const SubPageLayout = () => {
             <CardMedia
               component="img"
               height="440"
-              image={Image}
+              image={TestImage}
               alt="green iguana"
             />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Title
+                {/* {title} */}
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Dr Hans Kluge said a "west-to-east tidal wave" of Omicron was
+                {/* {cards.map((card) => (
+                  <p>{card.title}</p>
+                ))} */}
+                {/* Dr Hans Kluge said a "west-to-east tidal wave" of Omicron was
                 sweeping across the region, on top of a surge in the Delta
                 variant. The projection was based on the seven million new cases
                 reported across Europe in the first week of 2022. The number of
@@ -131,7 +139,7 @@ const SubPageLayout = () => {
                 pharmaceutical firm Pfizer said it would be able to launch a
                 version of its vaccine that offers special protection against
                 Omicron, to be rolled out in March. Health experts say it is not
-                yet clear whether this is needed.
+                yet clear whether this is needed. */}
               </Typography>
             </CardContent>
           </Card>
@@ -175,7 +183,7 @@ const SubPageLayout = () => {
             <CardMedia
               component="img"
               height="140"
-              image={Image}
+              image={TestImage}
               alt="green iguana"
             />
             <CardContent>
@@ -186,7 +194,7 @@ const SubPageLayout = () => {
             <CardMedia
               component="img"
               height="140"
-              image={Image}
+              image={TestImage}
               alt="green iguana"
             />
             <CardContent>
@@ -197,7 +205,7 @@ const SubPageLayout = () => {
             <CardMedia
               component="img"
               height="140"
-              image={Image}
+              image={TestImage}
               alt="green iguana"
             />
             <CardContent>

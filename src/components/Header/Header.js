@@ -17,13 +17,9 @@ const Header = () => {
   const [openExtraMenu, setOpenExtraMenu] = useState();
   const [showSignInForm, setShowSignInForm] = useState();
 
-  const toggleMenuHandler = () => {
-    setOpenExtraMenu(!openExtraMenu);
-  };
+  const toggleMenuHandler = () => setOpenExtraMenu(!openExtraMenu);
 
-  const toggleFormHandler = () => {
-    setShowSignInForm(!showSignInForm);
-  };
+  const toggleFormHandler = () => setShowSignInForm(!showSignInForm);
 
   const useStyles = makeStyles((theme) => ({
     bbcLogo: {

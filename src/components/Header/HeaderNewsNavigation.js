@@ -13,10 +13,6 @@ const HeaderNewsNavigation = () => {
     NewsNavigation: {
       backgroundColor: "#bb1919",
       minHeight: "10vh",
-      // display: "flex",
-      // flexDirection: "column",
-      // justifyContent: "center",
-      // fontSize: "calc(10px + 2vmin)",
       color: "white",
     },
     container: {
@@ -98,7 +94,7 @@ const HeaderNewsNavigation = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/uk"
+              to="/world"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -122,7 +118,7 @@ const HeaderNewsNavigation = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/business"
+              to="/politics"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -134,7 +130,7 @@ const HeaderNewsNavigation = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/politics"
+              to="/tech"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -146,7 +142,7 @@ const HeaderNewsNavigation = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/tech"
+              to="/science"
               component={RouterLink}
               underline="none"
               color="inherit"
@@ -158,7 +154,7 @@ const HeaderNewsNavigation = () => {
         <Grid item>
           <Typography variant="body1">
             <Link
-              to="/science"
+              to="/health"
               component={RouterLink}
               underline="none"
               color="inherit"

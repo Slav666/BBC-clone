@@ -24,7 +24,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#ff8c00",
     paddingTop: theme.spacing(2),
     paddingBottom: theme.spacing(2),
-    // maxWidth: "100%",
   },
   cardMedia: {
     height: "200px",
@@ -54,7 +53,7 @@ const MiddleFooterSection = () => {
             <CardActionArea style={{ color: "white" }}>
               <CardMedia
                 image={GanglandImage}
-                title="image title"
+                title="gangland"
                 className={classes.cardMedia}
               />
             </CardActionArea>
@@ -69,7 +68,7 @@ const MiddleFooterSection = () => {
             <CardActionArea>
               <CardMedia
                 image={WalkingInTheMorningImage}
-                title="image title"
+                title="walking in the morning"
                 className={classes.cardMedia}
               />
             </CardActionArea>
@@ -84,7 +83,7 @@ const MiddleFooterSection = () => {
             <CardActionArea>
               <CardMedia
                 image={UfoImage}
-                title="image title"
+                title="Ufo in Scotland"
                 className={classes.cardMedia}
               />
             </CardActionArea>
@@ -99,7 +98,7 @@ const MiddleFooterSection = () => {
             <CardActionArea>
               <CardMedia
                 image={FootballTransferImage}
-                title="image title"
+                title="Football transfer"
                 className={classes.cardMedia}
               />
             </CardActionArea>

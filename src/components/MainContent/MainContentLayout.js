@@ -13,7 +13,7 @@ import {
 } from "@material-ui/core";
 import { Link as RouterLink } from "react-router-dom";
 import footballTransferImage from "../../assets/footballTransfer.jpg";
-import SibPageLayout from "../subPageLayout/subPageLayout";
+import SubPageLayout from "../subPageLayout/subPageLayout";
 
 const useStyles = makeStyles((theme) => ({
   layout: {
@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const MainContentLayout = ({ cards }) => {
+  console.log("MainContentLayout", cards);
   const classes = useStyles();
   return (
     <>
@@ -81,7 +82,7 @@ const MainContentLayout = ({ cards }) => {
             {cards.map((card) => (
               <Grid item key={card.title} sm={6} lg={3}>
                 <Card className={classes.card}>
-                  <CardActionArea component={RouterLink} to="/stories">
+                  <CardActionArea component={RouterLink} to={`${card.title}`}>
                     <CardMedia
                       className={classes.cardMedia}
                       image={card.urlToImage}
