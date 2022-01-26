@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
+import SubPageLayout from "../components/subPageLayout/subPageLayout";
 
 const Health = () => {
   const [healthCards, setHealthCards] = useState([]);
@@ -19,6 +20,7 @@ const Health = () => {
     const data = await res.json();
     const articles = data.articles;
     return articles;
+    // return data;
   };
 
   return (

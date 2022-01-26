@@ -13,9 +13,7 @@ import {
 
 const SignInForm = () => {
   const [closeForm, setFormClose] = useState(true);
-  const closeFormHandler = () => {
-    setFormClose(!closeForm);
-  };
+  const closeFormHandler = () => setFormClose(!closeForm);
 
   return (
     <div>
