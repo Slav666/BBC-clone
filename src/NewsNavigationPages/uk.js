@@ -20,10 +20,15 @@ const Uk = () => {
     const data = await res.json();
     const articles = data.articles;
     return articles;
-    // return data;
   };
   return (
     <div>
+      <Routes>
+        <Route
+          path="/:title"
+          element={<SubPageLayout articles={ukCards} />}
+        ></Route>
+      </Routes>
       <MainContentLayout cards={ukCards} />
     </div>
   );

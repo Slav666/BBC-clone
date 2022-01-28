@@ -21,11 +21,16 @@ const Science = () => {
     const data = await res.json();
     const articles = data.articles;
     return articles;
-    // return data;
   };
 
   return (
     <div>
+      <Routes>
+        <Route
+          path="/:title"
+          element={<SubPageLayout articles={scienceCards} />}
+        ></Route>
+      </Routes>
       <MainContentLayout cards={scienceCards} />
     </div>
   );
