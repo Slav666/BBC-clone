@@ -21,7 +21,6 @@ const Business = () => {
     console.log("data", data);
     const articles = data.articles;
     return articles;
-    // return data;
   };
 
   return (

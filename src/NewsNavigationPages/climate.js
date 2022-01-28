@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
 import SubPageLayout from "../components/subPageLayout/subPageLayout";
 import { Route, Routes } from "react-router-dom";
+// import SubPageContent from "../components/subPageLayout/subPageContent";
+
 const Climate = () => {
   const [climateCards, setClimateCards] = useState([]);
+
   useEffect(() => {
     const getCards = async () => {
       const articlesFromNewsApi = await fetchArticles();
@@ -19,13 +22,18 @@ const Climate = () => {
     const data = await res.json();
     const articles = data.articles;
     return articles;
-    // return data;
   };
 
   return (
     <div>
+      <Routes>
+        <Route
+          path="/:title"
+          element={<SubPageLayout articles={climateCards} />}
+        ></Route>
+      </Routes>
+
       <MainContentLayout cards={climateCards} />
-      {/* <SubPageLayout cards={climateCards} /> */}
     </div>
   );
 };

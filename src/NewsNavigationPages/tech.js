@@ -20,11 +20,16 @@ const Tech = () => {
     const data = await res.json();
     const articles = data.articles;
     return articles;
-    // return data;
   };
 
   return (
     <div>
+      <Routes>
+        <Route
+          path="/:title"
+          element={<SubPageLayout articles={techCards} />}
+        ></Route>
+      </Routes>
       <MainContentLayout cards={techCards} />
     </div>
   );
