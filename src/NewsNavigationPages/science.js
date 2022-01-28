@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
+import SubPageLayout from "../components/subPageLayout/subPageLayout";
+import { Route, Routes } from "react-router-dom";
 
 const Science = () => {
   const [scienceCards, setScienceCards] = useState([]);

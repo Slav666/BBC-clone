@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
+import SubPageLayout from "../components/subPageLayout/subPageLayout";
+import { Route, Routes } from "react-router-dom";
 
 const Coronavirus = () => {
   const [coronaVirusCards, setCoronaVirusCards] = useState([]);
@@ -25,6 +27,13 @@ const Coronavirus = () => {
 
   return (
     <div>
+      <Routes>
+        <Route
+          path="/:title"
+          element={<SubPageLayout articles={coronaVirusCards} />}
+        ></Route>
+      </Routes>
+
       <MainContentLayout cards={coronaVirusCards} />
     </div>
   );

@@ -38,13 +38,10 @@ const MainContent = ({
           element={<SubpageLayout cards={climateCards} />}
         ></Route>
         <Route
-          path="/coronavirus"
+          path="/coronavirus/*"
           element={<Coronavirus cards={coronaVirusCards} />}
         ></Route>
-        <Route
-          path="/coronavirus/:title"
-          element={<SubpageLayout coronaVirusCards={coronaVirusCards} />}
-        ></Route>
+
         <Route path="/uk" element={<Uk cards={ukCards} />}></Route>
         <Route path="/uk/:title" element={<SubpageLayout />}></Route>
         <Route path="/world" element={<World cards={worldCards} />}></Route>

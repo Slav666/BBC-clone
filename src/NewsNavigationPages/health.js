@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
+import { Route, Routes } from "react-router-dom";
 import SubPageLayout from "../components/subPageLayout/subPageLayout";
 
 const Health = () => {

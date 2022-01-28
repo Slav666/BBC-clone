@@ -82,7 +82,11 @@ const MainContentLayout = ({ cards }) => {
             {cards.map((card) => (
               <Grid item key={card.title} sm={6} lg={3}>
                 <Card className={classes.card}>
-                  <CardActionArea component={RouterLink} to={`${card.title}`}>
+                  <CardActionArea
+                    component={RouterLink}
+                    to={`${card.title}`}
+                    // children={<SubPageLayout card={card} />}
+                  >
                     <CardMedia
                       className={classes.cardMedia}
                       image={card.urlToImage}
@@ -94,7 +98,7 @@ const MainContentLayout = ({ cards }) => {
                       gutterBottom
                       variant="body1"
                       component="h4"
-                      children={card.title}
+                      children={card.source.name}
                     />
                     <Typography children={card.description} />
                   </CardContent>

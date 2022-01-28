@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MainContentLayout from "../components/MainContent/MainContentLayout";
 import SubPageLayout from "../components/subPageLayout/subPageLayout";
-
+import { Route, Routes } from "react-router-dom";
 const Climate = () => {
   const [climateCards, setClimateCards] = useState([]);
   useEffect(() => {
@@ -25,7 +25,7 @@ const Climate = () => {
   return (
     <div>
       <MainContentLayout cards={climateCards} />
-      <SubPageLayout cards={climateCards} />
+      {/* <SubPageLayout cards={climateCards} /> */}
     </div>
   );
 };
